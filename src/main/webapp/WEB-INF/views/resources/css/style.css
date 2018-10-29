@@ -1,0 +1,11 @@
+*{
+    margin:0;
+    padding:0;
+}
+.wrapper{
+    width:60%;
+    margin:0 auto;
+}
+.wrapper .form-title{
+    text-align: center;
+}

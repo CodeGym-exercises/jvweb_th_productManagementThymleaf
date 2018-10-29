@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.codegym"/>
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/views/resources/" />
+
+    <mvc:annotation-driven/>
+
+    <!-- SpringResourceTemplateResolver automatically integrates with Spring's own -->
+    <!-- resource resolution infrastructure, which is highly recommended.          -->
+    <!--<bean id="templateResolver"-->
+          <!--class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">-->
+        <!--<property name="prefix" value="/WEB-INF/templates/" />-->
+        <!--<property name="suffix" value=".html" />-->
+        <!--&lt;!&ndash; HTML is the default value, added here for the sake of clarity.          &ndash;&gt;-->
+        <!--<property name="templateMode" value="HTML" />-->
+        <!--&lt;!&ndash; Template cache is true by default. Set to false if you want             &ndash;&gt;-->
+        <!--&lt;!&ndash; templates to be automatically updated when modified.                    &ndash;&gt;-->
+    <!--</bean>-->
+
+    <!-- SpringTemplateEngine automatically applies SpringStandardDialect and      -->
+    <!-- enables Spring's own MessageSource message resolution mechanisms.         -->
+    <!--<bean id="templateEngine"-->
+          <!--class="org.thymeleaf.spring4.SpringTemplateEngine">-->
+        <!--<property name="templateResolver" ref="templateResolver" />-->
+        <!--&lt;!&ndash; Enabling the SpringEL compiler with Spring 4.2.4 or newer can speed up  &ndash;&gt;-->
+        <!--&lt;!&ndash; execution in most scenarios, but might be incompatible with specific    &ndash;&gt;-->
+        <!--&lt;!&ndash; cases when expressions in one template are reused across different data &ndash;&gt;-->
+        <!--&lt;!&ndash; ypes, so this flag is "false" by default for safer backwards            &ndash;&gt;-->
+        <!--&lt;!&ndash; compatibility.                                                          &ndash;&gt;-->
+    <!--</bean>-->
+
+    <!--<bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">-->
+        <!--<property name="templateEngine" ref="templateEngine" />-->
+        <!--&lt;!&ndash; NOTE 'order' and 'viewNames' are optional &ndash;&gt;-->
+    <!--</bean>-->
+</beans>
